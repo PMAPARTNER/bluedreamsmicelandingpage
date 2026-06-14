@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Dreams Resort & Spa Bodrum – Toplantı & Etkinlik</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0d1e2c;--blue:#1a6fa8;--cyan:#3ab4e6;--light:#e8f4fb;}
+body{font-family:'Poppins',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden;}
+
+/* CAROUSEL */
+.carousel-wrap{position:relative;width:100%;overflow:hidden;}
+.carousel-track{display:flex;transition:transform 0.7s ease;}
+.carousel-track img{min-width:100%;height:500px;object-fit:cover;flex-shrink:0;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(58,180,230,0.75);border:none;color:#fff;font-size:22px;width:46px;height:46px;border-radius:50%;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:.3s;}
+.carousel-btn:hover{background:var(--cyan);}
+.carousel-btn.prev{left:16px;}
+.carousel-btn.next{right:16px;}
+.carousel-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
+.carousel-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:.3s;}
+.carousel-dots span.active{background:var(--cyan);}
+
+/* HERO */
+.hero-section{position:relative;}
+.hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:40px 56px;background:linear-gradient(transparent,rgba(13,30,44,0.94));}
+.hero-overlay h1{font-size:clamp(24px,4vw,48px);font-weight:800;line-height:1.15;}
+.hero-overlay h1 span{color:var(--cyan);}
+.hero-overlay p{font-size:15px;color:var(--light);margin-top:10px;max-width:580px;opacity:0.88;}
+
+/* ACTION BAR */
+.action-bar{display:flex;gap:14px;padding:24px 56px;background:var(--navy);flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(58,180,230,0.12);}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:13px 30px;border-radius:50px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.3s;font-family:inherit;white-space:nowrap;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(58,180,230,0.4);}
+.btn-outline{background:transparent;color:var(--cyan);padding:12px 26px;border-radius:50px;font-size:15px;font-weight:600;border:2px solid var(--cyan);cursor:pointer;transition:.3s;font-family:inherit;white-space:nowrap;}
+.btn-outline:hover{background:var(--cyan);color:var(--navy);}
+.contact-info{margin-left:auto;color:rgba(232,244,251,0.5);font-size:13px;}
+
+/* STATS */
+.stats{display:flex;}
+.stat{flex:1;text-align:center;padding:30px 12px;background:linear-gradient(135deg,#0a1824,#112233);border-right:1px solid rgba(58,180,230,0.1);}
+.stat:last-child{border-right:none;}
+.stat .num{font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--cyan);}
+.stat .lbl{font-size:11px;color:var(--light);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* SECTION */
+section{padding:64px 56px;}
+.section-title{text-align:center;margin-bottom:44px;}
+.section-title h2{font-size:clamp(20px,3vw,34px);font-weight:700;}
+.section-title h2 span{color:var(--cyan);}
+.section-title p{color:rgba(232,244,251,0.6);font-size:14px;margin-top:8px;}
+
+/* MAIN SALON CARD (İSTANBUL) */
+.main-salon{max-width:1100px;margin:0 auto 32px;display:grid;grid-template-columns:1.1fr 0.9fr;border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.15);}
+.main-salon img{width:100%;height:100%;min-height:320px;object-fit:cover;}
+.main-salon-body{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;}
+.salon-tag{display:inline-block;background:rgba(58,180,230,0.18);color:var(--cyan);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:14px;width:fit-content;}
+.main-salon-body h3{font-size:26px;font-weight:700;margin-bottom:6px;}
+.sub-label{font-size:12px;color:rgba(232,244,251,0.5);margin-bottom:16px;font-style:italic;}
+.main-salon-body .desc{font-size:14px;color:rgba(232,244,251,0.72);line-height:1.75;margin-bottom:22px;}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
+.cap-item{background:rgba(58,180,230,0.08);border:1px solid rgba(58,180,230,0.15);border-radius:10px;padding:12px;text-align:center;}
+.cap-item .cap-num{font-size:22px;font-weight:700;color:var(--cyan);}
+.cap-item .cap-lbl{font-size:10px;color:rgba(232,244,251,0.5);text-transform:uppercase;margin-top:2px;}
+.tag-list{display:flex;flex-wrap:wrap;gap:6px;}
+.feat-tag{background:rgba(255,255,255,0.06);color:rgba(232,244,251,0.7);font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);}
+
+/* SMALL SALON GRID */
+.small-salons{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.small-salon{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.1);transition:.3s;}
+.small-salon:hover{border-color:rgba(58,180,230,0.3);}
+.small-salon img{width:100%;height:100%;min-height:160px;object-fit:cover;}
+.small-body{padding:20px 18px;display:flex;flex-direction:column;justify-content:center;}
+.small-body .s-tag{font-size:10px;color:var(--cyan);font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;}
+.small-body h4{font-size:16px;font-weight:700;margin-bottom:8px;}
+.small-body .dims{font-size:11px;color:rgba(232,244,251,0.5);margin-bottom:10px;}
+.cap-row{display:flex;gap:8px;}
+.cap-pill{background:rgba(58,180,230,0.1);border:1px solid rgba(58,180,230,0.15);border-radius:8px;padding:5px 8px;text-align:center;flex:1;}
+.cap-pill .pnum{font-size:15px;font-weight:700;color:var(--cyan);}
+.cap-pill .plbl{font-size:9px;color:rgba(232,244,251,0.5);text-transform:uppercase;}
+
+/* OPEN AIR SECTION */
+.open-air{max-width:1100px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.12);direction:rtl;}
+.open-air > *{direction:ltr;}
+.open-air img{width:100%;height:100%;min-height:260px;object-fit:cover;}
+.open-air-body{padding:32px 36px;display:flex;flex-direction:column;justify-content:center;}
+.open-air-body h3{font-size:20px;font-weight:700;margin-bottom:8px;}
+.open-air-body .desc{font-size:13px;color:rgba(232,244,251,0.7);line-height:1.7;margin-bottom:18px;}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;max-width:1000px;margin:0 auto;}
+.feature{text-align:center;padding:24px 14px;background:rgba(255,255,255,0.03);border-radius:14px;border:1px solid rgba(58,180,230,0.08);}
+.feature .icon{font-size:32px;margin-bottom:10px;}
+.feature h4{font-size:13px;font-weight:600;color:var(--cyan);margin-bottom:3px;}
+.feature p{font-size:11px;color:rgba(232,244,251,0.55);}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#0f2a40,#1a6fa8);text-align:center;padding:64px 56px;}
+.cta-section h2{font-size:clamp(20px,3.5vw,38px);font-weight:800;margin-bottom:12px;}
+.cta-section p{color:rgba(232,244,251,0.85);font-size:15px;margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* CONTACT */
+.contact-section{background:#0a1824;}
+.contact-inner{max-width:600px;margin:0 auto;text-align:center;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;text-align:left;}
+.form-grid input,.form-grid select{background:rgba(255,255,255,0.06);border:1px solid rgba(58,180,230,0.18);border-radius:10px;padding:12px 15px;color:#fff;font-size:14px;font-family:inherit;width:100%;transition:.3s;}
+.form-grid input:focus,.form-grid select:focus{outline:none;border-color:var(--cyan);}
+.form-grid select option{background:#0d1e2c;}
+.form-full{grid-column:1/-1;}
+.form-full textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(58,180,230,0.18);border-radius:10px;padding:12px 15px;color:#fff;font-size:14px;font-family:inherit;width:100%;resize:vertical;min-height:100px;}
+.form-full textarea:focus{outline:none;border-color:var(--cyan);}
+::placeholder{color:rgba(255,255,255,0.28);}
+
+/* FOOTER */
+footer{background:#060f18;padding:26px 56px;text-align:center;color:rgba(232,244,251,0.38);font-size:13px;border-top:1px solid rgba(58,180,230,0.08);}
+footer .logo-text{font-size:14px;font-weight:600;color:rgba(232,244,251,0.6);margin-bottom:6px;}
+footer a{color:var(--cyan);text-decoration:none;}
+
+/* GALLERY */
+.gallery-section{padding:64px 0;}
+.gallery-section .section-title{padding:0 56px 36px;}
+
+@media(max-width:768px){
+  section,.action-bar,.hero-overlay,.cta-section,footer{padding-left:20px;padding-right:20px;}
+  .main-salon,.open-air,.small-salon{grid-template-columns:1fr;}
+  .open-air{direction:ltr;}
+  .main-salon img,.open-air img,.small-salon img{min-height:200px;height:220px;}
+  .carousel-track img{height:300px;}
+  .stats{flex-wrap:wrap;}
+  .stat{flex:0 0 50%;}
+  .contact-info{display:none;}
+  .form-grid{grid-template-columns:1fr;}
+  .cap-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP CAROUSEL -->
+<div class="hero-section">
+  <div class="carousel-wrap" id="topCarousel">
+    <div class="carousel-track" id="topTrack">
+      <img src="data:image/jpeg;base64,__SALON_A__" alt="Blue Dreams Resort Salon">
+      <img src="data:image/jpeg;base64,__SALON_B__" alt="Blue Dreams Resort Salon">
+      <img src="data:image/jpeg;base64,__SALON_G__" alt="Blue Dreams Resort Salon">
+      <img src="data:image/jpeg;base64,__SALON_F__" alt="Blue Dreams Resort Salon">
+    </div>
+    <button class="carousel-btn prev" onclick="moveCarousel('top',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="moveCarousel('top',1)">&#8250;</button>
+    <div class="carousel-dots" id="topDots"></div>
+  </div>
+  <div class="hero-overlay">
+    <h1>Bodrum'un Kalbinde<br><span>Toplantı & Etkinlik Deneyimi</span></h1>
+    <p>Torba Koyu'nun eşsiz doğasında, Ege'ye uzanan 52.000 m² alanda kurumsal organizasyonlarınız için ilham verici bir buluşma noktası.</p>
+  </div>
+</div>
+
+<!-- ACTION BAR -->
+<div class="action-bar">
+  <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary">📅 Rezervasyon Yapın</a>
+  <button class="btn-outline" onclick="downloadPDF()">📄 Tanıtım Kitini İndir</button>
+  <span class="contact-info">📞 +90 252 337 11 11 &nbsp;|&nbsp; ✉ sales@bluedreamsresort.com</span>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="num">6</div><div class="lbl">Toplantı Salonu</div></div>
+  <div class="stat"><div class="num">770<sup style="font-size:0.5em">m²</sup></div><div class="lbl">Ana Salon Alanı</div></div>
+  <div class="stat"><div class="num">700</div><div class="lbl">Tiyatro Kapasitesi</div></div>
+  <div class="stat"><div class="num">5★</div><div class="lbl">Bodrum, Muğla</div></div>
+</div>
+
+<!-- SALONS SECTION -->
+<section style="background:#0d1e2c;">
+  <div class="section-title">
+    <h2>Toplantı & <span>Etkinlik Salonları</span></h2>
+    <p>Her ölçek ve format için özel tasarlanmış, tam teknik donanımlı mekânlar</p>
+  </div>
+
+  <!-- İSTANBUL SALONU - ANA KART -->
+  <div class="main-salon">
+    <img src="data:image/jpeg;base64,__SALON_A__" alt="İstanbul Salonu">
+    <div class="main-salon-body">
+      <span class="salon-tag">Ana Etkinlik Salonu</span>
+      <h3>İstanbul Salonu</h3>
+      <p class="sub-label">İkiye Bölünebilir · Avrupa & Asya Bölümü</p>
+      <p class="desc">Blue Dreams Resort'un en büyük ve prestijli etkinlik mekânı. İkiye bölünebilir yapısıyla hem dev organizasyonlar hem eş zamanlı çift etkinlik imkânı sunar. Sahne, podyum, ses ve ışık altyapısı dahil.</p>
+      <div class="cap-grid">
+        <div class="cap-item"><div class="cap-num">700</div><div class="cap-lbl">Tiyatro</div></div>
+        <div class="cap-item"><div class="cap-num">450</div><div class="cap-lbl">Banket</div></div>
+        <div class="cap-item"><div class="cap-num">770</div><div class="cap-lbl">m²</div></div>
+      </div>
+      <div class="tag-list">
+        <span class="feat-tag">✔ Bölünebilir (Avrupa + Asya)</span>
+        <span class="feat-tag">✔ Sahne & Podyum</span>
+        <span class="feat-tag">✔ Ses & Işık Sistemi</span>
+        <span class="feat-tag">✔ Projeksiyon</span>
+        <span class="feat-tag">✔ Yükseklik 3.50–4.00 m</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KÜÇÜK SALONLAR -->
+  <div style="max-width:1100px;margin:28px auto 0;">
+    <p style="text-align:center;font-size:13px;color:rgba(232,244,251,0.5);margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;">Toplantı Odaları</p>
+  </div>
+  <div class="small-salons">
+
+    <div class="small-salon">
+      <img src="data:image/jpeg;base64,__SALON_D__" alt="Turunç">
+      <div class="small-body">
+        <div class="s-tag">Toplantı Odası</div>
+        <h4>Turunç</h4>
+        <div class="dims">4,50 × 6,50 m · Yükseklik 3,20 m</div>
+        <div class="cap-row">
+          <div class="cap-pill"><div class="pnum">35</div><div class="plbl">Tiyatro</div></div>
+          <div class="cap-pill"><div class="pnum">10</div><div class="plbl">Toplantı</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-salon">
+      <img src="data:image/jpeg;base64,__SALON_E__" alt="Salamis">
+      <div class="small-body">
+        <div class="s-tag">Toplantı Odası</div>
+        <h4>Salamis</h4>
+        <div class="dims">8,30 × 4,35 m · Yükseklik 2,70 m</div>
+        <div class="cap-row">
+          <div class="cap-pill"><div class="pnum">45</div><div class="plbl">Tiyatro</div></div>
+          <div class="cap-pill"><div class="pnum">14</div><div class="plbl">Toplantı</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-salon">
+      <img src="data:image/jpeg;base64,__SALON_I__" alt="Belek">
+      <div class="small-body">
+        <div class="s-tag">Toplantı Odası</div>
+        <h4>Belek</h4>
+        <div class="dims">4,40 × 4,40 m · Yükseklik 2,70 m</div>
+        <div class="cap-row">
+          <div class="cap-pill"><div class="pnum">20</div><div class="plbl">Tiyatro</div></div>
+          <div class="cap-pill"><div class="pnum">10</div><div class="plbl">Toplantı</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-salon">
+      <img src="data:image/jpeg;base64,__SALON_H__" alt="Marmaris">
+      <div class="small-body">
+        <div class="s-tag">Toplantı Odası</div>
+        <h4>Marmaris</h4>
+        <div class="dims">4,30 × 5,30 m · Yükseklik 2,70 m</div>
+        <div class="cap-row">
+          <div class="cap-pill"><div class="pnum">30</div><div class="plbl">Tiyatro</div></div>
+          <div class="cap-pill"><div class="pnum">10</div><div class="plbl">Toplantı</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-salon">
+      <img src="data:image/jpeg;base64,__SALON_C__" alt="Stockholm">
+      <div class="small-body">
+        <div class="s-tag">Toplantı Odası</div>
+        <h4>Stockholm</h4>
+        <div class="dims">4,30 × 4,40 m · Yükseklik 2,70 m</div>
+        <div class="cap-row">
+          <div class="cap-pill"><div class="pnum">20</div><div class="plbl">Tiyatro</div></div>
+          <div class="cap-pill"><div class="pnum">10</div><div class="plbl">Toplantı</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AÇIK ALAN -->
+  <div class="open-air">
+    <img src="data:image/jpeg;base64,__SALON_G__" alt="Açık Etkinlik Alanları">
+    <div class="open-air-body">
+      <span class="salon-tag">Açık Etkinlik</span>
+      <h3>Açık Hava & Restoran Alanları</h3>
+      <p class="desc">Ana restoran grup alanı (300+ kişi, 200 m²) ve A'la Carte restoranlar (150 kişi) ile özel gala yemekleri, kokteyller ve VIP davetler için mükemmel lokasyonlar. Ses, ışık, projeksiyon ve sahne desteği mevcuttur.</p>
+      <div class="tag-list">
+        <span class="feat-tag">✔ Ana Restoran 300+ kişi</span>
+        <span class="feat-tag">✔ A'la Carte 150 kişi</span>
+        <span class="feat-tag">✔ Ses & Projeksiyon</span>
+        <span class="feat-tag">✔ Sahne & Mikrofon</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- WHY BLUE DREAMS -->
+<section style="background:#0a1824;">
+  <div class="section-title"><h2>Neden <span>Blue Dreams?</span></h2></div>
+  <div class="features">
+    <div class="feature"><div class="icon">🎯</div><h4>A'dan Z'ye Koordinasyon</h4><p>Etkinlik koordinatörümüz her adımda yanınızda</p></div>
+    <div class="feature"><div class="icon">🍽️</div><h4>Gala & Catering</h4><p>550 kişilik açık büfe, A'la Carte & özel menü</p></div>
+    <div class="feature"><div class="icon">🌊</div><h4>Torba Koyu</h4><p>52.000 m², özel plaj & marina, Bodrum'a 10 dk</p></div>
+    <div class="feature"><div class="icon">🎤</div><h4>Teknik Altyapı</h4><p>Ses, ışık, projeksiyon, sahne, mikrofon, WiFi</p></div>
+    <div class="feature"><div class="icon">🚌</div><h4>VIP Transfer</h4><p>Havalimanı 25 km · Özel karşılamalı transfer</p></div>
+    <div class="feature"><div class="icon">🏊</div><h4>SPA & Aktiviteler</h4><p>Naya Spa, havuzlar, aqua park, su sporları</p></div>
+  </div>
+</section>
+
+<!-- GALLERY CAROUSEL -->
+<div class="gallery-section" style="background:#0d1e2c;">
+  <div class="section-title" style="padding:0 56px 36px;">
+    <h2>Salon <span>Galerisi</span></h2>
+  </div>
+  <div class="carousel-wrap" id="botCarousel">
+    <div class="carousel-track" id="botTrack">
+      <img src="data:image/jpeg;base64,__SALON_A__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_B__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_C__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_D__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_E__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_F__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_G__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_H__" alt="Salon">
+      <img src="data:image/jpeg;base64,__SALON_I__" alt="Salon">
+    </div>
+    <button class="carousel-btn prev" onclick="moveCarousel('bot',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="moveCarousel('bot',1)">&#8250;</button>
+    <div class="carousel-dots" id="botDots"></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Etkinliğinizi Hayalinizdeki Gibi Planlayın</h2>
+  <p>Toplantınız, konferansınız veya özel etkinliğiniz için teklif alın. Ekibimiz 24 saat içinde sizinle iletişime geçer.</p>
+  <div class="cta-btns">
+    <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary">🌐 Web Sitesinde Rezervasyon</a>
+    <button class="btn-outline" onclick="downloadPDF()">📄 Tanıtım Kiti İndir</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="section-title">
+      <h2>Bizimle <span>İletişime Geçin</span></h2>
+      <p>Teklif ve bilgi talepleriniz için formu doldurun.</p>
+    </div>
+    <form onsubmit="submitForm(event)">
+      <div class="form-grid">
+        <input type="text" placeholder="Adınız Soyadınız" required>
+        <input type="email" placeholder="E-posta" required>
+        <input type="tel" placeholder="Telefon">
+        <input type="text" placeholder="Şirket / Kurum">
+        <select class="form-full">
+          <option value="">Etkinlik Türü</option>
+          <option>Kurumsal Toplantı</option>
+          <option>Konferans / Kongre</option>
+          <option>Gala Yemeği</option>
+          <option>Düğün / Özel Etkinlik</option>
+          <option>Team Building</option>
+          <option>Ürün Lansmanı</option>
+          <option>Diğer</option>
+        </select>
+        <input type="text" placeholder="Tahmini Katılımcı Sayısı">
+        <input type="date">
+        <div class="form-full"><textarea placeholder="Etkinliğiniz hakkında bilgi verin..."></textarea></div>
+        <button type="submit" class="btn-primary form-full" style="border:none;padding:15px;">Teklif İsteyin →</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo-text">Blue Dreams Resort & Spa Bodrum</div>
+  <p>Torba Mah. Heredot Bulvarı No:11 Bodrum, Muğla &nbsp;|&nbsp; <a href="tel:+902523371111">+90 252 337 11 11</a> &nbsp;|&nbsp; <a href="mailto:sales@bluedreamsresort.com">sales@bluedreamsresort.com</a></p>
+  <p style="margin-top:8px;"><a href="https://bluedreamsresort.com/tr/meetings" target="_blank">bluedreamsresort.com</a> &nbsp;|&nbsp; @bluedreamsresort</p>
+</footer>
+
+<script>
+var _pdfB64="__PDF_B64__";
+function downloadPDF(){
+  try{var b=Uint8Array.from(atob(_pdfB64),function(c){return c.charCodeAt(0);});
+  var blob=new Blob([b],{type:'application/pdf'});var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='BlueDreams-Tanitim-Kiti.pdf';
+  document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);document.body.removeChild(a);},3000);
+  }catch(e){alert('PDF hazırlanıyor...');}}
+function submitForm(e){e.preventDefault();var btn=e.target.querySelector('[type=submit]');
+  btn.textContent='✅ Talebiniz Alındı!';btn.style.background='linear-gradient(135deg,#1a8a4a,#2dd36f)';
+  setTimeout(function(){btn.textContent='Teklif İsteyin →';btn.style.background='';},4000);}
+var carousels={};
+function initCarousel(id,trackId,dotsId,count,autoMs){
+  var s={idx:0,count:count,track:document.getElementById(trackId),dots:[]};
+  var dotsEl=document.getElementById(dotsId);
+  for(var i=0;i<count;i++){var d=document.createElement('span');if(i===0)d.className='active';
+    (function(idx){d.onclick=function(){goTo(id,idx);};})(i);dotsEl.appendChild(d);s.dots.push(d);}
+  carousels[id]=s;if(autoMs)setInterval(function(){moveCarousel(id,1);},autoMs);}
+function goTo(id,idx){var s=carousels[id];if(!s)return;
+  s.idx=(idx+s.count)%s.count;s.track.style.transform='translateX(-'+s.idx*100+'%)';
+  s.dots.forEach(function(d,i){d.className=i===s.idx?'active':'';});}
+function moveCarousel(id,dir){var s=carousels[id];if(!s)return;goTo(id,s.idx+dir);}
+window.onload=function(){initCarousel('top','topTrack','topDots',4,4500);initCarousel('bot','botTrack','botDots',9,3000);};
+</script>
+</body>
+</html>

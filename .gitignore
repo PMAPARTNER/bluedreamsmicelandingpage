@@ -1,0 +1,6 @@
+# Görseller ve PDF lokal kalır, GitHub'a yüklenmez
+images/
+assets/
+
+# macOS
+.DS_Store
