@@ -4,7 +4,8 @@
 Türkçe reklam amaçlı landing page. Mavi/lacivert tema, self-contained HTML (görseller ve PDF base64 olarak gömülü).
 
 **Canlı URL:** https://pmapartner.github.io/bluedreamsmicelandingpage/bluedreams-landing-v2.html  
-**Booking URL:** https://bluedreamsresort.com/tr/meetings
+**Booking URL:** https://bluedreamsresort.com/tr/meetings  
+**GitHub Repo:** https://github.com/PMAPARTNER/bluedreamsmicelandingpage
 
 ---
 
@@ -12,27 +13,36 @@ Türkçe reklam amaçlı landing page. Mavi/lacivert tema, self-contained HTML (
 
 Kullanıcı "deploy et", "push et", "güncelle" dediğinde şu adımları izle:
 
-### 1. Görsellerin mevcut olduğunu doğrula
+### 1. Repo'yu /tmp'ye klonla (her seferinde)
 ```bash
-ls ~/Downloads/images/MER02619.jpg
+TOKEN=$(cat ~/Downloads/.github_token)
+rm -rf /tmp/bluedreams-repo
+git clone https://PMAPARTNER:${TOKEN}@github.com/PMAPARTNER/bluedreamsmicelandingpage.git /tmp/bluedreams-repo
+cd /tmp/bluedreams-repo
+git config user.email "hanates4444@gmail.com"
+git config user.name "PMAPARTNER"
+git remote set-url origin https://PMAPARTNER:${TOKEN}@github.com/PMAPARTNER/bluedreamsmicelandingpage.git
 ```
 
 ### 2. HTML'i yeniden oluştur
 ```bash
-cd ~/Downloads  # veya repo klonlandığı dizin
+cd /tmp/bluedreams-repo
+# Görselleri ve PDF'i kopyala
+cp ~/Downloads/images/* ./images/ 2>/dev/null || true
+cp ~/Downloads/assets/* ./assets/ 2>/dev/null || true
+# Build et
 python3 build.py
 ```
 
-### 3. GitHub'a push et
+### 3. Push et
 ```bash
-cd ~/Downloads  # repo dizini
-./deploy.sh
+cd /tmp/bluedreams-repo
+git add bluedreams-landing-v2.html
+git commit -m "Landing page güncellendi — $(date '+%Y-%m-%d %H:%M')"
+git push origin main
 ```
 
-Eğer `git push` çalışmazsa (sandbox'ta internet yok) Chrome MCP ile GitHub web upload kullan:
-- `https://github.com/PMAPARTNER/bluedreamsmicelandingpage/upload` adresine git
-- `bluedreams-landing-v2.html` dosyasını yükle
-- "Commit changes" butonuna tıkla
+**NOT:** Bash sandbox'ında internet erişimi VAR. Git push direkt çalışır. Chrome MCP'ye gerek yok.
 
 ---
 
@@ -92,12 +102,3 @@ Google Drive: https://drive.google.com/drive/u/1/folders/1AS0vDacBXAFP2ieh1i-IGH
 --cyan: #3ab4e6;
 --light: #e8f4fb;
 ```
-
----
-
-## Teknik Notlar
-- Görseller max 1000px genişlik, JPEG kalite 68 olarak sıkıştırılır
-- PDF tam boyutuyla base64 olarak gömülür (~5.4MB)
-- Çıktı HTML ~9MB (tamamen offline çalışır, internet gerektirmez)
-- Carousel: Pure CSS/JS, 4.5s hero / 3s galeri otomatik geçiş
-- Bash sandbox'ında internet erişimi YOK → git push için Chrome MCP kullan

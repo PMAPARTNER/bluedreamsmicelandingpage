@@ -4,3 +4,4 @@ assets/
 
 # macOS
 .DS_Store
+.github_token
