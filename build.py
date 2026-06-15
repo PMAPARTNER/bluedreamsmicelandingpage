@@ -38,8 +38,8 @@ TEMPLATE     = SCRIPT_DIR / "template.html"
 OUTPUT       = SCRIPT_DIR / "bluedreams-landing-v2.html"
 IMAGES_DIR   = SCRIPT_DIR / "images"
 PDF_PATH     = SCRIPT_DIR / "assets" / "factsheet.pdf"
-MAX_WIDTH    = 1000   # piksel
-IMG_QUALITY  = 68     # JPEG kalitesi
+MAX_WIDTH    = 1600   # piksel
+IMG_QUALITY  = 85     # JPEG kalitesi
 
 # Görsellerin hangi placeholder'a karşılık geldiği
 IMAGE_MAP = {
