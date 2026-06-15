@@ -44,13 +44,13 @@ IMG_QUALITY  = 68     # JPEG kalitesi
 # Görsellerin hangi placeholder'a karşılık geldiği
 IMAGE_MAP = {
     "salon_sea": "aerial_view.jpg", # Havadan resort + deniz manzarası (hero ilk slayt)
-    "salon_a": "MER02619.jpg",    # İstanbul Salonu — hero
+    "salon_a": "MER01894.jpg",    # İstanbul Salonu — iç mekan büyük salon
     "salon_b": "MER02615.jpg",    # İstanbul Salonu (galeri)
     "salon_c": "_MUR5722.jpg",    # Stockholm
     "salon_d": "_MUR5702.jpg",    # Turunç
     "salon_e": "_MUR5706.jpg",    # Salamis
     "salon_f": "MER02596.jpg",    # İstanbul Salonu (galeri)
-    "salon_g": "MER01894.jpg",    # Açık alan
+    "salon_g": "MER02619.jpg",    # Açık alan/balkon deniz manzaralı
     "salon_h": "_MUR5712.jpg",    # Marmaris
     "salon_i": "_MUR5709.jpg",    # Belek
 }
