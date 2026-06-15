@@ -219,7 +219,8 @@ footer a:hover{color:var(--cyan);}
 <div class="hero-section">
   <div class="carousel-wrap" id="topCarousel">
     <div class="carousel-track" id="topTrack">
-      <img src="data:image/jpeg;base64,__SALON_SEA__" alt="Blue Dreams Resort Bodrum — Havadan Görünüm">
+      <img src="data:image/jpeg;base64,__SALON_J__" alt="Toplantı Salonu — Ege Deniz Manzarası">
+      <img src="data:image/jpeg;base64,__SALON_K__" alt="Blue Dreams Resort — Havadan Görünüm">
       <img src="data:image/jpeg;base64,__SALON_A__" alt="İstanbul Salonu">
       <img src="data:image/jpeg;base64,__SALON_B__" alt="Blue Dreams Salon">
       <img src="data:image/jpeg;base64,__SALON_G__" alt="Açık Alan">
@@ -663,7 +664,7 @@ function goTo(id,idx){var s=carousels[id];if(!s)return;
   s.idx=(idx+s.count)%s.count;s.track.style.transform='translateX(-'+s.idx*100+'%)';
   s.dots.forEach(function(d,i){d.className=i===s.idx?'active':'';});}
 function moveCarousel(id,dir){var s=carousels[id];if(!s)return;goTo(id,s.idx+dir);}
-window.onload=function(){initCarousel('top','topTrack','topDots',5,4500);initCarousel('bot','botTrack','botDots',9,3000);};
+window.onload=function(){initCarousel('top','topTrack','topDots',6,4500);initCarousel('bot','botTrack','botDots',9,3000);};
 </script>
 </body>
 </html>
