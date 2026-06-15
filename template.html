@@ -118,6 +118,39 @@ footer{background:#060f18;padding:26px 56px;text-align:center;color:rgba(232,244
 footer .logo-text{font-size:14px;font-weight:600;color:rgba(232,244,251,0.6);margin-bottom:6px;}
 footer a{color:var(--cyan);text-decoration:none;}
 
+/* SP HIGHLIGHTS */
+.sp-banner{background:linear-gradient(180deg,#0a1824 0%,#071219 100%);padding:56px;}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.sp-card{background:rgba(26,111,168,0.08);border:1px solid rgba(58,180,230,0.2);border-radius:18px;padding:28px 26px;transition:.3s;position:relative;overflow:hidden;}
+.sp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));}
+.sp-card:hover{border-color:rgba(58,180,230,0.45);transform:translateY(-3px);}
+.sp-card .sp-icon{font-size:36px;margin-bottom:14px;display:block;}
+.sp-card h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.35;}
+.sp-card p{font-size:13px;color:rgba(232,244,251,0.65);line-height:1.7;}
+.sp-card .sp-badge{display:inline-block;background:rgba(58,180,230,0.15);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:12px;letter-spacing:0.5px;}
+
+/* KULLANIM AMAÇLARI */
+.use-section{background:#071219;padding:56px;}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;max-width:1000px;margin:32px auto 0;}
+.use-item{background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.1);border-radius:12px;padding:18px 14px;text-align:center;transition:.3s;}
+.use-item:hover{border-color:rgba(58,180,230,0.3);background:rgba(58,180,230,0.06);}
+.use-item .u-icon{font-size:26px;margin-bottom:8px;display:block;}
+.use-item p{font-size:12px;font-weight:600;color:rgba(232,244,251,0.75);}
+
+/* KONUM */
+.location-section{background:#0a1824;padding:56px;}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:900px;margin:32px auto 0;}
+.loc-card{background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.12);border-radius:14px;padding:22px 20px;display:flex;align-items:center;gap:16px;}
+.loc-icon{font-size:32px;flex-shrink:0;}
+.loc-info h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
+.loc-info .dist{font-size:20px;font-weight:800;color:var(--cyan);}
+.loc-info .time{font-size:11px;color:rgba(232,244,251,0.5);margin-top:2px;}
+
+@media(max-width:768px){
+  .sp-banner,.use-section,.location-section{padding:40px 20px;}
+  .sp-grid{grid-template-columns:1fr;}
+}
+
 /* GALLERY */
 .gallery-section{padding:64px 0;}
 .gallery-section .section-title{padding:0 56px 36px;}
@@ -171,6 +204,59 @@ footer a{color:var(--cyan);text-decoration:none;}
   <div class="stat"><div class="num">770<sup style="font-size:0.5em">m²</sup></div><div class="lbl">Ana Salon Alanı</div></div>
   <div class="stat"><div class="num">700</div><div class="lbl">Tiyatro Kapasitesi</div></div>
   <div class="stat"><div class="num">5★</div><div class="lbl">Bodrum, Muğla</div></div>
+</div>
+
+<!-- SP HIGHLIGHTS -->
+<div class="sp-banner">
+  <div class="section-title" style="max-width:1100px;margin:0 auto 32px;">
+    <h2>Blue Dreams'te <span>Toplantı Ayrıcalıkları</span></h2>
+    <p>Rakiplerimizden bizi ayıran 6 temel fark</p>
+  </div>
+  <div class="sp-grid">
+
+    <div class="sp-card">
+      <span class="sp-icon">🌊</span>
+      <h3>Bodrum'un En Eşsiz Ege Manzarasında Toplantı</h3>
+      <p>700 kişiye kadar toplantı ve organizasyonlarınızı Ege Denizi'nin büyüleyici manzarası eşliğinde gerçekleştirin. Torba Koyu'nun mavisiyle iç içe, 52.000 m² doğa alanında kurumsal etkinlik deneyimi.</p>
+      <span class="sp-badge">700 Kişiye Kadar</span>
+    </div>
+
+    <div class="sp-card">
+      <span class="sp-icon">⭐</span>
+      <h3>5 Yıldızlı Tatil Köyüne Entegre Tam Hizmet</h3>
+      <p>Toplantı salonlarımız 5 yıldızlı tatil köyüyle tam entegre çalışır. 550 kişilik açık büfe, A'la Carte restoranlar (Halicarnassus, La Lokanta, Le Kebab) ve özel gala yemeği organizasyonu dahil tam teşekküllü catering hizmeti.</p>
+      <span class="sp-badge">Tam Teşekküllü Catering</span>
+    </div>
+
+    <div class="sp-card">
+      <span class="sp-icon">🏨</span>
+      <h3>Konaklamalı veya Günübirlik — Her İkisi de Mümkün</h3>
+      <p>336 oda kapasitesiyle katılımcılarınızın aynı tesiste konaklamasını sağlayın; ya da tüm teknik altyapı ve catering hizmetiyle günübirlik etkinlik düzenleyin. Her iki seçenek için özel paketler mevcuttur.</p>
+      <span class="sp-badge">336 Oda Kapasitesi</span>
+    </div>
+
+    <div class="sp-card">
+      <span class="sp-icon">🖥️</span>
+      <h3>Tam Teknik Altyapı — Ekstra Ücret Yok</h3>
+      <p>LED ekran, projeksiyon sistemi, sahne & podyum, profesyonel ses ve ışık sistemi, kablosuz mikrofon, yazı tahtası ve yüksek hızlı Wi-Fi tüm salonlarda dahildir. Teknik ekip etkinlik boyunca yerinde destek sağlar.</p>
+      <span class="sp-badge">Teknik Ekip Dahil</span>
+    </div>
+
+    <div class="sp-card">
+      <span class="sp-icon">🎯</span>
+      <h3>Her Türlü Etkinliğe Uygun Çok Fonksiyonlu Mekanlar</h3>
+      <p>Kongre, kurumsal toplantı, bayi toplantısı, ürün lansmanı, yönetim zirvesi, basın açıklaması, motivasyon etkinliği, gala gecesi, ekip buluşması ve çok daha fazlası için esnek mekan alternatifleri.</p>
+      <span class="sp-badge">7 Farklı Etkinlik Türü</span>
+    </div>
+
+    <div class="sp-card">
+      <span class="sp-icon">📍</span>
+      <h3>Bodrum'a Yakın, Dünyadan Uzak</h3>
+      <p>Milas-Bodrum Havalimanı'na sadece 25 km (yaklaşık 25 dakika). Bodrum şehir merkezine 10 dakika, Yalıkavak Marina'ya 20 km mesafede. Özel VIP karşılamalı transfer hizmeti isteğe bağlı olarak düzenlenir.</p>
+      <span class="sp-badge">Havalimanı 25 km</span>
+    </div>
+
+  </div>
 </div>
 
 <!-- SALONS SECTION -->
@@ -294,16 +380,80 @@ footer a{color:var(--cyan);text-decoration:none;}
 
 </section>
 
+<!-- KULLANIM AMAÇLARI -->
+<div class="use-section">
+  <div class="section-title">
+    <h2>Hangi Etkinlik İçin <span>Mükemmel?</span></h2>
+    <p>Blue Dreams salonları her türlü kurumsal ve özel organizasyon için esneklikle kullanılabilir</p>
+  </div>
+  <div class="use-grid">
+    <div class="use-item"><span class="u-icon">🎙️</span><p>Kongre & Konferans</p></div>
+    <div class="use-item"><span class="u-icon">🤝</span><p>Kurumsal Toplantı</p></div>
+    <div class="use-item"><span class="u-icon">🏪</span><p>Bayi Toplantısı</p></div>
+    <div class="use-item"><span class="u-icon">🚀</span><p>Ürün Lansmanı</p></div>
+    <div class="use-item"><span class="u-icon">👔</span><p>Yönetim Zirvesi</p></div>
+    <div class="use-item"><span class="u-icon">📰</span><p>Basın Açıklaması</p></div>
+    <div class="use-item"><span class="u-icon">💡</span><p>Motivasyon Etkinliği</p></div>
+    <div class="use-item"><span class="u-icon">🍷</span><p>Gala Gecesi</p></div>
+    <div class="use-item"><span class="u-icon">🏃</span><p>Team Building</p></div>
+    <div class="use-item"><span class="u-icon">🎓</span><p>Eğitim & Seminer</p></div>
+  </div>
+</div>
+
+<!-- KONUM & ULAŞIM -->
+<div class="location-section">
+  <div class="section-title">
+    <h2>Konum & <span>Ulaşım</span></h2>
+    <p>Torba Mah. Heredot Bulvarı No:11 Bodrum, Muğla · Özel VIP transfer hizmeti isteğe bağlı</p>
+  </div>
+  <div class="location-grid">
+    <div class="loc-card">
+      <div class="loc-icon">✈️</div>
+      <div class="loc-info">
+        <h4>Milas-Bodrum Havalimanı</h4>
+        <div class="dist">25 km</div>
+        <div class="time">yaklaşık 25 dakika</div>
+      </div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-icon">🏙️</div>
+      <div class="loc-info">
+        <h4>Bodrum Şehir Merkezi</h4>
+        <div class="dist">10 dk</div>
+        <div class="time">yaklaşık 8 km</div>
+      </div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-icon">⛵</div>
+      <div class="loc-info">
+        <h4>Yalıkavak Marina</h4>
+        <div class="dist">20 km</div>
+        <div class="time">yaklaşık 20 dakika</div>
+      </div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-icon">🚌</div>
+      <div class="loc-info">
+        <h4>VIP Transfer Hizmeti</h4>
+        <div class="dist" style="font-size:14px;margin-top:4px;">İsteğe Bağlı</div>
+        <div class="time">Özel karşılamalı araç</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- WHY BLUE DREAMS -->
-<section style="background:#0a1824;">
-  <div class="section-title"><h2>Neden <span>Blue Dreams?</span></h2></div>
+<section style="background:#0d1e2c;">
+  <div class="section-title"><h2>Hizmetlerimiz & <span>Olanaklar</span></h2></div>
   <div class="features">
     <div class="feature"><div class="icon">🎯</div><h4>A'dan Z'ye Koordinasyon</h4><p>Etkinlik koordinatörümüz her adımda yanınızda</p></div>
     <div class="feature"><div class="icon">🍽️</div><h4>Gala & Catering</h4><p>550 kişilik açık büfe, A'la Carte & özel menü</p></div>
     <div class="feature"><div class="icon">🌊</div><h4>Torba Koyu</h4><p>52.000 m², özel plaj & marina, Bodrum'a 10 dk</p></div>
     <div class="feature"><div class="icon">🎤</div><h4>Teknik Altyapı</h4><p>Ses, ışık, projeksiyon, sahne, mikrofon, WiFi</p></div>
-    <div class="feature"><div class="icon">🚌</div><h4>VIP Transfer</h4><p>Havalimanı 25 km · Özel karşılamalı transfer</p></div>
+    <div class="feature"><div class="icon">🏨</div><h4>336 Oda Kapasite</h4><p>Konaklamalı veya günübirlik organizasyon paketi</p></div>
     <div class="feature"><div class="icon">🏊</div><h4>SPA & Aktiviteler</h4><p>Naya Spa, havuzlar, aqua park, su sporları</p></div>
+    <div class="feature"><div class="icon">🔒</div><h4>Güvenli Turizm</h4><p>Sertifikalı tesis, gıda güvenliği & hijyen protokolleri</p></div>
+    <div class="feature"><div class="icon">🎪</div><h4>Antik Tiyatro & Sahne</h4><p>Açık hava etkinlikleri için eşsiz atmosfer</p></div>
   </div>
 </section>
 
