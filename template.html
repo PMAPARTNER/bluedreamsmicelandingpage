@@ -569,15 +569,13 @@ footer a:hover{color:var(--cyan);}
   </div>
   <div class="carousel-wrap" id="botCarousel">
     <div class="carousel-track" id="botTrack">
-      <img src="data:image/jpeg;base64,__SALON_A__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_B__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_C__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_D__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_E__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_F__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_G__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_H__" alt="Salon">
-      <img src="data:image/jpeg;base64,__SALON_I__" alt="Salon">
+      <img src="data:image/jpeg;base64,__GALLERY_1__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_2__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_3__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_4__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_5__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_6__" alt="Etkinlik">
+      <img src="data:image/jpeg;base64,__GALLERY_7__" alt="Etkinlik">
     </div>
     <button class="carousel-btn prev" onclick="moveCarousel('bot',-1)">&#8249;</button>
     <button class="carousel-btn next" onclick="moveCarousel('bot',1)">&#8250;</button>
@@ -664,7 +662,7 @@ function goTo(id,idx){var s=carousels[id];if(!s)return;
   s.idx=(idx+s.count)%s.count;s.track.style.transform='translateX(-'+s.idx*100+'%)';
   s.dots.forEach(function(d,i){d.className=i===s.idx?'active':'';});}
 function moveCarousel(id,dir){var s=carousels[id];if(!s)return;goTo(id,s.idx+dir);}
-window.onload=function(){initCarousel('top','topTrack','topDots',6,4500);initCarousel('bot','botTrack','botDots',9,3000);};
+window.onload=function(){initCarousel('top','topTrack','topDots',6,4500);initCarousel('bot','botTrack','botDots',7,3000);};
 </script>
 </body>
 </html>

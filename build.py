@@ -54,6 +54,14 @@ IMAGE_MAP = {
     "salon_g": "MER02619.jpg",    # Açık alan/balkon deniz manzaralı
     "salon_h": "_MUR5712.jpg",    # Marmaris
     "salon_i": "_MUR5709.jpg",    # Belek
+    # Alt galeri — insanlar/etkinlik fotoğrafları
+    "gallery_1": "gallery_1.jpg",
+    "gallery_2": "gallery_2.jpg",
+    "gallery_3": "gallery_3.jpg",
+    "gallery_4": "gallery_4.jpg",
+    "gallery_5": "gallery_5.jpg",
+    "gallery_6": "gallery_6.jpg",
+    "gallery_7": "gallery_7.jpg",
 }
 # ─────────────────────────────────────────────────────────────────────────────
 
