@@ -4,182 +4,226 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Dreams Resort & Spa Bodrum – Toplantı & Etkinlik</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy:#0d1e2c;--blue:#1a6fa8;--cyan:#3ab4e6;--light:#e8f4fb;}
-body{font-family:'Poppins',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden;}
+:root{
+  --navy:#0d1e2c;
+  --blue:#1a6fa8;
+  --cyan:#3ab4e6;
+  --light:#f4f8fb;
+  --border:#dce8f0;
+  --text:#0d1e2c;
+  --sub:#5a7080;
+  --white:#ffffff;
+}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
 
-/* CAROUSEL */
+/* ── NAVBAR ── */
+.navbar{background:var(--white);padding:14px 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.navbar-logo img{height:42px;width:auto;display:block;}
+.navbar-contact{font-size:13px;color:var(--sub);display:flex;align-items:center;gap:22px;}
+.navbar-contact a{color:var(--blue);text-decoration:none;font-weight:500;}
+.navbar-contact .nc-item{display:flex;align-items:center;gap:6px;}
+.navbar-contact svg{width:14px;height:14px;fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+@media(max-width:768px){.navbar{padding:12px 20px;}.navbar-contact{display:none;}}
+
+/* ── CAROUSEL ── */
 .carousel-wrap{position:relative;width:100%;overflow:hidden;}
-.carousel-track{display:flex;transition:transform 0.7s ease;}
-.carousel-track img{min-width:100%;height:500px;object-fit:cover;flex-shrink:0;}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(58,180,230,0.75);border:none;color:#fff;font-size:22px;width:46px;height:46px;border-radius:50%;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:.3s;}
-.carousel-btn:hover{background:var(--cyan);}
-.carousel-btn.prev{left:16px;}
-.carousel-btn.next{right:16px;}
-.carousel-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
-.carousel-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:.3s;}
-.carousel-dots span.active{background:var(--cyan);}
+.carousel-track{display:flex;transition:transform 0.7s cubic-bezier(.4,0,.2,1);}
+.carousel-track img{min-width:100%;height:520px;object-fit:cover;flex-shrink:0;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.92);border:none;color:var(--navy);font-size:20px;width:44px;height:44px;border-radius:50%;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:.25s;box-shadow:0 2px 16px rgba(0,0,0,0.14);}
+.carousel-btn:hover{background:#fff;box-shadow:0 4px 24px rgba(0,0,0,0.2);}
+.carousel-btn.prev{left:20px;}
+.carousel-btn.next{right:20px;}
+.carousel-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;}
+.carousel-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.45);cursor:pointer;transition:.3s;}
+.carousel-dots span.active{background:#fff;width:22px;border-radius:4px;}
 
-/* HERO */
+/* ── HERO ── */
 .hero-section{position:relative;}
-.hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:40px 56px;background:linear-gradient(transparent,rgba(13,30,44,0.94));}
-.hero-overlay h1{font-size:clamp(24px,4vw,48px);font-weight:800;line-height:1.15;}
+.hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:52px 56px;background:linear-gradient(transparent,rgba(6,15,24,0.88));}
+.hero-overlay h1{font-size:clamp(22px,4vw,46px);font-weight:700;line-height:1.15;color:#fff;letter-spacing:-0.5px;}
 .hero-overlay h1 span{color:var(--cyan);}
-.hero-overlay p{font-size:15px;color:var(--light);margin-top:10px;max-width:580px;opacity:0.88;}
+.hero-overlay p{font-size:14px;color:rgba(255,255,255,0.78);margin-top:10px;max-width:560px;line-height:1.65;}
 
-/* ACTION BAR */
-.action-bar{display:flex;gap:14px;padding:24px 56px;background:var(--navy);flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(58,180,230,0.12);}
-.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:13px 30px;border-radius:50px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.3s;font-family:inherit;white-space:nowrap;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(58,180,230,0.4);}
-.btn-outline{background:transparent;color:var(--cyan);padding:12px 26px;border-radius:50px;font-size:15px;font-weight:600;border:2px solid var(--cyan);cursor:pointer;transition:.3s;font-family:inherit;white-space:nowrap;}
-.btn-outline:hover{background:var(--cyan);color:var(--navy);}
-.contact-info{margin-left:auto;color:rgba(232,244,251,0.5);font-size:13px;}
+/* ── ACTION BAR ── */
+.action-bar{display:flex;gap:12px;padding:18px 56px;background:var(--white);flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);}
+.btn-primary{background:var(--blue);color:#fff;padding:12px 26px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.25s;font-family:inherit;white-space:nowrap;display:flex;align-items:center;gap:7px;}
+.btn-primary:hover{background:var(--navy);transform:translateY(-1px);box-shadow:0 4px 16px rgba(26,111,168,0.25);}
+.btn-outline{background:transparent;color:var(--blue);padding:11px 22px;border-radius:6px;font-size:14px;font-weight:600;border:1.5px solid var(--blue);cursor:pointer;transition:.25s;font-family:inherit;white-space:nowrap;display:flex;align-items:center;gap:7px;}
+.btn-outline:hover{background:var(--blue);color:#fff;}
+.btn-outline svg,.btn-primary svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.contact-info{margin-left:auto;color:var(--sub);font-size:13px;}
 
-/* STATS */
-.stats{display:flex;}
-.stat{flex:1;text-align:center;padding:30px 12px;background:linear-gradient(135deg,#0a1824,#112233);border-right:1px solid rgba(58,180,230,0.1);}
+/* ── STATS ── */
+.stats{display:flex;border-bottom:1px solid var(--border);}
+.stat{flex:1;text-align:center;padding:28px 12px;background:var(--white);border-right:1px solid var(--border);}
 .stat:last-child{border-right:none;}
-.stat .num{font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--cyan);}
-.stat .lbl{font-size:11px;color:var(--light);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;}
+.stat .num{font-size:clamp(26px,4vw,42px);font-weight:800;color:var(--blue);}
+.stat .lbl{font-size:11px;color:var(--sub);margin-top:4px;text-transform:uppercase;letter-spacing:0.8px;}
 
-/* SECTION */
-section{padding:64px 56px;}
-.section-title{text-align:center;margin-bottom:44px;}
-.section-title h2{font-size:clamp(20px,3vw,34px);font-weight:700;}
-.section-title h2 span{color:var(--cyan);}
-.section-title p{color:rgba(232,244,251,0.6);font-size:14px;margin-top:8px;}
+/* ── SECTIONS ── */
+section{padding:72px 56px;}
+.section-title{text-align:center;margin-bottom:48px;}
+.section-title h2{font-size:clamp(20px,2.8vw,32px);font-weight:700;color:var(--navy);letter-spacing:-0.3px;}
+.section-title h2 span{color:var(--blue);}
+.section-title p{color:var(--sub);font-size:14px;margin-top:8px;}
 
-/* MAIN SALON CARD (İSTANBUL) */
-.main-salon{max-width:1100px;margin:0 auto 32px;display:grid;grid-template-columns:1.1fr 0.9fr;border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.15);}
+/* ── MAIN SALON CARD ── */
+.main-salon{max-width:1100px;margin:0 auto 24px;display:grid;grid-template-columns:1.1fr 0.9fr;border-radius:12px;overflow:hidden;background:var(--white);border:1px solid var(--border);box-shadow:0 2px 20px rgba(13,30,44,0.06);}
 .main-salon img{width:100%;height:100%;min-height:320px;object-fit:cover;}
-.main-salon-body{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;}
-.salon-tag{display:inline-block;background:rgba(58,180,230,0.18);color:var(--cyan);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:14px;width:fit-content;}
-.main-salon-body h3{font-size:26px;font-weight:700;margin-bottom:6px;}
-.sub-label{font-size:12px;color:rgba(232,244,251,0.5);margin-bottom:16px;font-style:italic;}
-.main-salon-body .desc{font-size:14px;color:rgba(232,244,251,0.72);line-height:1.75;margin-bottom:22px;}
-.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
-.cap-item{background:rgba(58,180,230,0.08);border:1px solid rgba(58,180,230,0.15);border-radius:10px;padding:12px;text-align:center;}
-.cap-item .cap-num{font-size:22px;font-weight:700;color:var(--cyan);}
-.cap-item .cap-lbl{font-size:10px;color:rgba(232,244,251,0.5);text-transform:uppercase;margin-top:2px;}
+.main-salon-body{padding:40px;display:flex;flex-direction:column;justify-content:center;}
+.salon-tag{display:inline-block;background:var(--light);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:14px;width:fit-content;border:1px solid var(--border);}
+.main-salon-body h3{font-size:24px;font-weight:700;margin-bottom:6px;color:var(--navy);}
+.sub-label{font-size:12px;color:var(--sub);margin-bottom:16px;}
+.main-salon-body .desc{font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:24px;}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+.cap-item{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
+.cap-item .cap-num{font-size:22px;font-weight:800;color:var(--blue);}
+.cap-item .cap-lbl{font-size:10px;color:var(--sub);text-transform:uppercase;margin-top:3px;letter-spacing:0.5px;}
 .tag-list{display:flex;flex-wrap:wrap;gap:6px;}
-.feat-tag{background:rgba(255,255,255,0.06);color:rgba(232,244,251,0.7);font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);}
+.feat-tag{background:var(--light);color:var(--sub);font-size:11px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);}
 
-/* SMALL SALON GRID */
-.small-salons{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
-.small-salon{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.1);transition:.3s;}
-.small-salon:hover{border-color:rgba(58,180,230,0.3);}
-.small-salon img{width:100%;height:100%;min-height:160px;object-fit:cover;}
-.small-body{padding:20px 18px;display:flex;flex-direction:column;justify-content:center;}
-.small-body .s-tag{font-size:10px;color:var(--cyan);font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;}
-.small-body h4{font-size:16px;font-weight:700;margin-bottom:8px;}
-.small-body .dims{font-size:11px;color:rgba(232,244,251,0.5);margin-bottom:10px;}
+/* ── SMALL SALONS ── */
+.small-salons{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;max-width:1100px;margin:0 auto;}
+.small-salon{display:grid;grid-template-columns:1fr 1fr;border-radius:10px;overflow:hidden;background:var(--white);border:1px solid var(--border);transition:.25s;box-shadow:0 1px 6px rgba(13,30,44,0.04);}
+.small-salon:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(26,111,168,0.1);}
+.small-salon img{width:100%;height:100%;min-height:150px;object-fit:cover;}
+.small-body{padding:18px 16px;display:flex;flex-direction:column;justify-content:center;}
+.small-body .s-tag{font-size:10px;color:var(--blue);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
+.small-body h4{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--navy);}
+.small-body .dims{font-size:11px;color:var(--sub);margin-bottom:10px;}
 .cap-row{display:flex;gap:8px;}
-.cap-pill{background:rgba(58,180,230,0.1);border:1px solid rgba(58,180,230,0.15);border-radius:8px;padding:5px 8px;text-align:center;flex:1;}
-.cap-pill .pnum{font-size:15px;font-weight:700;color:var(--cyan);}
-.cap-pill .plbl{font-size:9px;color:rgba(232,244,251,0.5);text-transform:uppercase;}
+.cap-pill{background:var(--light);border:1px solid var(--border);border-radius:6px;padding:6px 8px;text-align:center;flex:1;}
+.cap-pill .pnum{font-size:15px;font-weight:700;color:var(--blue);}
+.cap-pill .plbl{font-size:9px;color:var(--sub);text-transform:uppercase;}
 
-/* OPEN AIR SECTION */
-.open-air{max-width:1100px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.12);direction:rtl;}
+/* ── OPEN AIR ── */
+.open-air{max-width:1100px;margin:24px auto 0;display:grid;grid-template-columns:1fr 1fr;border-radius:12px;overflow:hidden;background:var(--white);border:1px solid var(--border);direction:rtl;box-shadow:0 2px 20px rgba(13,30,44,0.06);}
 .open-air > *{direction:ltr;}
 .open-air img{width:100%;height:100%;min-height:260px;object-fit:cover;}
-.open-air-body{padding:32px 36px;display:flex;flex-direction:column;justify-content:center;}
-.open-air-body h3{font-size:20px;font-weight:700;margin-bottom:8px;}
-.open-air-body .desc{font-size:13px;color:rgba(232,244,251,0.7);line-height:1.7;margin-bottom:18px;}
+.open-air-body{padding:36px;display:flex;flex-direction:column;justify-content:center;}
+.open-air-body h3{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--navy);}
+.open-air-body .desc{font-size:13px;color:var(--sub);line-height:1.75;margin-bottom:18px;}
 
-/* FEATURES */
+/* ── SP HIGHLIGHTS ── */
+.sp-banner{background:var(--light);padding:72px 56px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;max-width:1100px;margin:0 auto;}
+.sp-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px;transition:.25s;box-shadow:0 1px 8px rgba(13,30,44,0.04);}
+.sp-card:hover{border-color:var(--blue);box-shadow:0 6px 24px rgba(26,111,168,0.1);transform:translateY(-2px);}
+.sp-card .sp-icon{width:46px;height:46px;background:var(--navy);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
+.sp-card .sp-icon svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.sp-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;}
+.sp-card p{font-size:13px;color:var(--sub);line-height:1.7;}
+.sp-card .sp-badge{display:inline-block;background:var(--light);color:var(--blue);font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;margin-top:14px;letter-spacing:0.3px;border:1px solid var(--border);}
+
+/* ── KULLANIM AMAÇLARI ── */
+.use-section{background:var(--white);padding:72px 56px;}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;max-width:1000px;margin:32px auto 0;}
+.use-item{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:22px 12px;text-align:center;transition:.25s;}
+.use-item:hover{border-color:var(--blue);background:var(--white);box-shadow:0 4px 16px rgba(26,111,168,0.08);}
+.use-item .u-icon{width:42px;height:42px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+.use-item .u-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.use-item p{font-size:12px;font-weight:600;color:var(--navy);}
+
+/* ── FEATURES ── */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;max-width:1000px;margin:0 auto;}
-.feature{text-align:center;padding:24px 14px;background:rgba(255,255,255,0.03);border-radius:14px;border:1px solid rgba(58,180,230,0.08);}
-.feature .icon{font-size:32px;margin-bottom:10px;}
-.feature h4{font-size:13px;font-weight:600;color:var(--cyan);margin-bottom:3px;}
-.feature p{font-size:11px;color:rgba(232,244,251,0.55);}
+.feature{text-align:center;padding:28px 16px;background:var(--white);border-radius:10px;border:1px solid var(--border);transition:.25s;}
+.feature:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(26,111,168,0.08);}
+.feature .icon{width:52px;height:52px;background:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.feature .icon svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.feature h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.feature p{font-size:11px;color:var(--sub);line-height:1.6;}
 
-/* CTA */
-.cta-section{background:linear-gradient(135deg,#0f2a40,#1a6fa8);text-align:center;padding:64px 56px;}
-.cta-section h2{font-size:clamp(20px,3.5vw,38px);font-weight:800;margin-bottom:12px;}
-.cta-section p{color:rgba(232,244,251,0.85);font-size:15px;margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+/* ── LOCATION ── */
+.location-section{background:var(--light);padding:72px 56px;border-top:1px solid var(--border);}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:900px;margin:32px auto 0;}
+.loc-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:22px 18px;display:flex;align-items:center;gap:16px;transition:.25s;}
+.loc-card:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(26,111,168,0.08);}
+.loc-icon{width:50px;height:50px;background:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.loc-icon svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.loc-info h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.loc-info .dist{font-size:22px;font-weight:800;color:var(--blue);}
+.loc-info .time{font-size:11px;color:var(--sub);margin-top:2px;}
 
-/* CONTACT */
-.contact-section{background:#0a1824;}
-.contact-inner{max-width:600px;margin:0 auto;text-align:center;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;text-align:left;}
-.form-grid input,.form-grid select{background:rgba(255,255,255,0.06);border:1px solid rgba(58,180,230,0.18);border-radius:10px;padding:12px 15px;color:#fff;font-size:14px;font-family:inherit;width:100%;transition:.3s;}
-.form-grid input:focus,.form-grid select:focus{outline:none;border-color:var(--cyan);}
-.form-grid select option{background:#0d1e2c;}
-.form-full{grid-column:1/-1;}
-.form-full textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(58,180,230,0.18);border-radius:10px;padding:12px 15px;color:#fff;font-size:14px;font-family:inherit;width:100%;resize:vertical;min-height:100px;}
-.form-full textarea:focus{outline:none;border-color:var(--cyan);}
-::placeholder{color:rgba(255,255,255,0.28);}
-
-/* FOOTER */
-footer{background:#060f18;padding:26px 56px;text-align:center;color:rgba(232,244,251,0.38);font-size:13px;border-top:1px solid rgba(58,180,230,0.08);}
-footer .logo-text{font-size:14px;font-weight:600;color:rgba(232,244,251,0.6);margin-bottom:6px;}
-footer a{color:var(--cyan);text-decoration:none;}
-
-/* SP HIGHLIGHTS */
-.sp-banner{background:linear-gradient(180deg,#0a1824 0%,#071219 100%);padding:56px;}
-.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
-.sp-card{background:rgba(26,111,168,0.08);border:1px solid rgba(58,180,230,0.2);border-radius:18px;padding:28px 26px;transition:.3s;position:relative;overflow:hidden;}
-.sp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));}
-.sp-card:hover{border-color:rgba(58,180,230,0.45);transform:translateY(-3px);}
-.sp-card .sp-icon{font-size:36px;margin-bottom:14px;display:block;}
-.sp-card h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.35;}
-.sp-card p{font-size:13px;color:rgba(232,244,251,0.65);line-height:1.7;}
-.sp-card .sp-badge{display:inline-block;background:rgba(58,180,230,0.15);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:12px;letter-spacing:0.5px;}
-
-/* KULLANIM AMAÇLARI */
-.use-section{background:#071219;padding:56px;}
-.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;max-width:1000px;margin:32px auto 0;}
-.use-item{background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.1);border-radius:12px;padding:18px 14px;text-align:center;transition:.3s;}
-.use-item:hover{border-color:rgba(58,180,230,0.3);background:rgba(58,180,230,0.06);}
-.use-item .u-icon{font-size:26px;margin-bottom:8px;display:block;}
-.use-item p{font-size:12px;font-weight:600;color:rgba(232,244,251,0.75);}
-
-/* KONUM */
-.location-section{background:#0a1824;padding:56px;}
-.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:900px;margin:32px auto 0;}
-.loc-card{background:rgba(255,255,255,0.03);border:1px solid rgba(58,180,230,0.12);border-radius:14px;padding:22px 20px;display:flex;align-items:center;gap:16px;}
-.loc-icon{font-size:32px;flex-shrink:0;}
-.loc-info h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
-.loc-info .dist{font-size:20px;font-weight:800;color:var(--cyan);}
-.loc-info .time{font-size:11px;color:rgba(232,244,251,0.5);margin-top:2px;}
-
-@media(max-width:768px){
-  .sp-banner,.use-section,.location-section{padding:40px 20px;}
-  .sp-grid{grid-template-columns:1fr;}
-}
-
-/* GALLERY */
-.gallery-section{padding:64px 0;}
+/* ── GALLERY ── */
+.gallery-section{padding:72px 0;background:var(--light);border-top:1px solid var(--border);}
 .gallery-section .section-title{padding:0 56px 36px;}
 
+/* ── CTA ── */
+.cta-section{background:var(--navy);text-align:center;padding:72px 56px;}
+.cta-section h2{font-size:clamp(20px,3vw,34px);font-weight:700;margin-bottom:12px;color:#fff;letter-spacing:-0.3px;}
+.cta-section p{color:rgba(255,255,255,0.65);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-section .btn-primary{background:#fff;color:var(--navy);}
+.cta-section .btn-primary:hover{background:var(--cyan);color:#fff;}
+.cta-section .btn-outline{border-color:rgba(255,255,255,0.4);color:#fff;}
+.cta-section .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:#fff;}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--light);}
+.contact-inner{max-width:580px;margin:0 auto;text-align:center;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;text-align:left;}
+.form-grid input,.form-grid select{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:12px 14px;color:var(--text);font-size:14px;font-family:inherit;width:100%;transition:.2s;}
+.form-grid input:focus,.form-grid select:focus{outline:none;border-color:var(--blue);}
+.form-grid select option{background:var(--white);color:var(--navy);}
+.form-full{grid-column:1/-1;}
+.form-full textarea{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:12px 14px;color:var(--text);font-size:14px;font-family:inherit;width:100%;resize:vertical;min-height:100px;transition:.2s;}
+.form-full textarea:focus{outline:none;border-color:var(--blue);}
+::placeholder{color:rgba(13,30,44,0.32);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:28px 56px;text-align:center;color:rgba(255,255,255,0.4);font-size:13px;}
+footer .footer-logo img{height:36px;width:auto;margin:0 auto 14px;display:block;opacity:0.75;}
+footer a{color:rgba(255,255,255,0.6);text-decoration:none;transition:.2s;}
+footer a:hover{color:var(--cyan);}
+
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
-  section,.action-bar,.hero-overlay,.cta-section,footer{padding-left:20px;padding-right:20px;}
+  section,.action-bar,.hero-overlay,.cta-section,footer,.sp-banner,.use-section,.location-section{padding-left:20px;padding-right:20px;}
   .main-salon,.open-air,.small-salon{grid-template-columns:1fr;}
   .open-air{direction:ltr;}
   .main-salon img,.open-air img,.small-salon img{min-height:200px;height:220px;}
-  .carousel-track img{height:300px;}
+  .carousel-track img{height:320px;}
+  .hero-overlay{padding:28px 20px;}
   .stats{flex-wrap:wrap;}
   .stat{flex:0 0 50%;}
   .contact-info{display:none;}
   .form-grid{grid-template-columns:1fr;}
   .cap-grid{grid-template-columns:repeat(3,1fr);}
+  .sp-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- TOP CAROUSEL -->
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="data:image/png;base64,__LOGO__" alt="Blue Dreams Resort & Spa Bodrum">
+  </div>
+  <div class="navbar-contact">
+    <div class="nc-item">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:+902523371111">+90 252 337 11 11</a>
+    </div>
+    <div class="nc-item">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:sales@bluedreamsresort.com">sales@bluedreamsresort.com</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
 <div class="hero-section">
   <div class="carousel-wrap" id="topCarousel">
     <div class="carousel-track" id="topTrack">
       <img src="data:image/jpeg;base64,__SALON_SEA__" alt="Blue Dreams Resort Bodrum — Havadan Görünüm">
-      <img src="data:image/jpeg;base64,__SALON_A__" alt="Blue Dreams Resort Salon">
-      <img src="data:image/jpeg;base64,__SALON_B__" alt="Blue Dreams Resort Salon">
-      <img src="data:image/jpeg;base64,__SALON_G__" alt="Blue Dreams Resort Salon">
-      <img src="data:image/jpeg;base64,__SALON_F__" alt="Blue Dreams Resort Salon">
+      <img src="data:image/jpeg;base64,__SALON_A__" alt="İstanbul Salonu">
+      <img src="data:image/jpeg;base64,__SALON_B__" alt="Blue Dreams Salon">
+      <img src="data:image/jpeg;base64,__SALON_G__" alt="Açık Alan">
+      <img src="data:image/jpeg;base64,__SALON_F__" alt="Blue Dreams Salon">
     </div>
     <button class="carousel-btn prev" onclick="moveCarousel('top',-1)">&#8249;</button>
     <button class="carousel-btn next" onclick="moveCarousel('top',1)">&#8250;</button>
@@ -193,9 +237,15 @@ footer a{color:var(--cyan);text-decoration:none;}
 
 <!-- ACTION BAR -->
 <div class="action-bar">
-  <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary">📅 Rezervasyon Yapın</a>
-  <button class="btn-outline" onclick="downloadPDF()">📄 Tanıtım Kitini İndir</button>
-  <span class="contact-info">📞 +90 252 337 11 11 &nbsp;|&nbsp; ✉ sales@bluedreamsresort.com</span>
+  <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Rezervasyon Yapın
+  </a>
+  <button class="btn-outline" onclick="downloadPDF()">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+    Tanıtım Kitini İndir
+  </button>
+  <span class="contact-info">+90 252 337 11 11 &nbsp;|&nbsp; sales@bluedreamsresort.com</span>
 </div>
 
 <!-- STATS -->
@@ -208,51 +258,51 @@ footer a{color:var(--cyan);text-decoration:none;}
 
 <!-- SP HIGHLIGHTS -->
 <div class="sp-banner">
-  <div class="section-title" style="max-width:1100px;margin:0 auto 32px;">
+  <div class="section-title" style="max-width:1100px;margin:0 auto 36px;">
     <h2>Blue Dreams'te <span>Toplantı Ayrıcalıkları</span></h2>
     <p>Rakiplerimizden bizi ayıran 6 temel fark</p>
   </div>
   <div class="sp-grid">
 
     <div class="sp-card">
-      <span class="sp-icon">🌊</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M2 17l3-3 3 3 3-3 3 3 3-3 3 3"/><path d="M2 12l3-3 3 3 3-3 3 3 3-3 3 3"/><path d="M2 7l3-3 3 3 3-3 3 3 3-3 3 3"/></svg></div>
       <h3>Bodrum'un En Eşsiz Ege Manzarasında Toplantı</h3>
       <p>700 kişiye kadar toplantı ve organizasyonlarınızı Ege Denizi'nin büyüleyici manzarası eşliğinde gerçekleştirin. Torba Koyu'nun mavisiyle iç içe, 52.000 m² doğa alanında kurumsal etkinlik deneyimi.</p>
       <span class="sp-badge">700 Kişiye Kadar</span>
     </div>
 
     <div class="sp-card">
-      <span class="sp-icon">⭐</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
       <h3>5 Yıldızlı Tatil Köyüne Entegre Tam Hizmet</h3>
-      <p>Toplantı salonlarımız 5 yıldızlı tatil köyüyle tam entegre çalışır. 550 kişilik açık büfe, A'la Carte restoranlar (Halicarnassus, La Lokanta, Le Kebab) ve özel gala yemeği organizasyonu dahil tam teşekküllü catering hizmeti.</p>
+      <p>Toplantı salonlarımız 5 yıldızlı tatil köyüyle tam entegre çalışır. 550 kişilik açık büfe, A'la Carte restoranlar ve özel gala yemeği organizasyonu dahil tam teşekküllü catering hizmeti.</p>
       <span class="sp-badge">Tam Teşekküllü Catering</span>
     </div>
 
     <div class="sp-card">
-      <span class="sp-icon">🏨</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <h3>Konaklamalı veya Günübirlik — Her İkisi de Mümkün</h3>
-      <p>336 oda kapasitesiyle katılımcılarınızın aynı tesiste konaklamasını sağlayın; ya da tüm teknik altyapı ve catering hizmetiyle günübirlik etkinlik düzenleyin. Her iki seçenek için özel paketler mevcuttur.</p>
+      <p>336 oda kapasitesiyle katılımcılarınızın aynı tesiste konaklamasını sağlayın; ya da tüm teknik altyapı ve catering hizmetiyle günübirlik etkinlik düzenleyin.</p>
       <span class="sp-badge">336 Oda Kapasitesi</span>
     </div>
 
     <div class="sp-card">
-      <span class="sp-icon">🖥️</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <h3>Tam Teknik Altyapı — Ekstra Ücret Yok</h3>
-      <p>LED ekran, projeksiyon sistemi, sahne & podyum, profesyonel ses ve ışık sistemi, kablosuz mikrofon, yazı tahtası ve yüksek hızlı Wi-Fi tüm salonlarda dahildir. Teknik ekip etkinlik boyunca yerinde destek sağlar.</p>
+      <p>LED ekran, projeksiyon sistemi, sahne & podyum, profesyonel ses ve ışık sistemi, kablosuz mikrofon, yazı tahtası ve yüksek hızlı Wi-Fi tüm salonlarda dahildir.</p>
       <span class="sp-badge">Teknik Ekip Dahil</span>
     </div>
 
     <div class="sp-card">
-      <span class="sp-icon">🎯</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <h3>Her Türlü Etkinliğe Uygun Çok Fonksiyonlu Mekanlar</h3>
-      <p>Kongre, kurumsal toplantı, bayi toplantısı, ürün lansmanı, yönetim zirvesi, basın açıklaması, motivasyon etkinliği, gala gecesi, ekip buluşması ve çok daha fazlası için esnek mekan alternatifleri.</p>
-      <span class="sp-badge">7 Farklı Etkinlik Türü</span>
+      <p>Kongre, kurumsal toplantı, bayi toplantısı, ürün lansmanı, yönetim zirvesi, basın açıklaması, motivasyon etkinliği, gala gecesi ve daha fazlası için esnek mekan alternatifleri.</p>
+      <span class="sp-badge">10+ Etkinlik Türü</span>
     </div>
 
     <div class="sp-card">
-      <span class="sp-icon">📍</span>
+      <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
       <h3>Bodrum'a Yakın, Dünyadan Uzak</h3>
-      <p>Milas-Bodrum Havalimanı'na sadece 25 km (yaklaşık 25 dakika). Bodrum şehir merkezine 10 dakika, Yalıkavak Marina'ya 20 km mesafede. Özel VIP karşılamalı transfer hizmeti isteğe bağlı olarak düzenlenir.</p>
+      <p>Milas-Bodrum Havalimanı'na sadece 25 km (yaklaşık 25 dakika). Bodrum şehir merkezine 10 dakika, Yalıkavak Marina'ya 20 km mesafede. Özel VIP transfer hizmeti mevcuttur.</p>
       <span class="sp-badge">Havalimanı 25 km</span>
     </div>
 
@@ -260,13 +310,13 @@ footer a{color:var(--cyan);text-decoration:none;}
 </div>
 
 <!-- SALONS SECTION -->
-<section style="background:#0d1e2c;">
+<section style="background:var(--white);">
   <div class="section-title">
     <h2>Toplantı & <span>Etkinlik Salonları</span></h2>
     <p>Her ölçek ve format için özel tasarlanmış, tam teknik donanımlı mekânlar</p>
   </div>
 
-  <!-- İSTANBUL SALONU - ANA KART -->
+  <!-- İSTANBUL SALONU -->
   <div class="main-salon">
     <img src="data:image/jpeg;base64,__SALON_A__" alt="İstanbul Salonu">
     <div class="main-salon-body">
@@ -280,19 +330,17 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="cap-item"><div class="cap-num">770</div><div class="cap-lbl">m²</div></div>
       </div>
       <div class="tag-list">
-        <span class="feat-tag">✔ Bölünebilir (Avrupa + Asya)</span>
-        <span class="feat-tag">✔ Sahne & Podyum</span>
-        <span class="feat-tag">✔ Ses & Işık Sistemi</span>
-        <span class="feat-tag">✔ Projeksiyon</span>
-        <span class="feat-tag">✔ Yükseklik 3.50–4.00 m</span>
+        <span class="feat-tag">Bölünebilir (Avrupa + Asya)</span>
+        <span class="feat-tag">Sahne & Podyum</span>
+        <span class="feat-tag">Ses & Işık Sistemi</span>
+        <span class="feat-tag">Projeksiyon</span>
+        <span class="feat-tag">Yükseklik 3.50–4.00 m</span>
       </div>
     </div>
   </div>
 
   <!-- KÜÇÜK SALONLAR -->
-  <div style="max-width:1100px;margin:28px auto 0;">
-    <p style="text-align:center;font-size:13px;color:rgba(232,244,251,0.5);margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;">Toplantı Odaları</p>
-  </div>
+  <div style="max-width:1100px;margin:28px auto 18px;"><p style="font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:1.2px;">Toplantı Odaları</p></div>
   <div class="small-salons">
 
     <div class="small-salon">
@@ -370,10 +418,10 @@ footer a{color:var(--cyan);text-decoration:none;}
       <h3>Açık Hava & Restoran Alanları</h3>
       <p class="desc">Ana restoran grup alanı (300+ kişi, 200 m²) ve A'la Carte restoranlar (150 kişi) ile özel gala yemekleri, kokteyller ve VIP davetler için mükemmel lokasyonlar. Ses, ışık, projeksiyon ve sahne desteği mevcuttur.</p>
       <div class="tag-list">
-        <span class="feat-tag">✔ Ana Restoran 300+ kişi</span>
-        <span class="feat-tag">✔ A'la Carte 150 kişi</span>
-        <span class="feat-tag">✔ Ses & Projeksiyon</span>
-        <span class="feat-tag">✔ Sahne & Mikrofon</span>
+        <span class="feat-tag">Ana Restoran 300+ kişi</span>
+        <span class="feat-tag">A'la Carte 150 kişi</span>
+        <span class="feat-tag">Ses & Projeksiyon</span>
+        <span class="feat-tag">Sahne & Mikrofon</span>
       </div>
     </div>
   </div>
@@ -387,16 +435,46 @@ footer a{color:var(--cyan);text-decoration:none;}
     <p>Blue Dreams salonları her türlü kurumsal ve özel organizasyon için esneklikle kullanılabilir</p>
   </div>
   <div class="use-grid">
-    <div class="use-item"><span class="u-icon">🎙️</span><p>Kongre & Konferans</p></div>
-    <div class="use-item"><span class="u-icon">🤝</span><p>Kurumsal Toplantı</p></div>
-    <div class="use-item"><span class="u-icon">🏪</span><p>Bayi Toplantısı</p></div>
-    <div class="use-item"><span class="u-icon">🚀</span><p>Ürün Lansmanı</p></div>
-    <div class="use-item"><span class="u-icon">👔</span><p>Yönetim Zirvesi</p></div>
-    <div class="use-item"><span class="u-icon">📰</span><p>Basın Açıklaması</p></div>
-    <div class="use-item"><span class="u-icon">💡</span><p>Motivasyon Etkinliği</p></div>
-    <div class="use-item"><span class="u-icon">🍷</span><p>Gala Gecesi</p></div>
-    <div class="use-item"><span class="u-icon">🏃</span><p>Team Building</p></div>
-    <div class="use-item"><span class="u-icon">🎓</span><p>Eğitim & Seminer</p></div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 013 3v4a3 3 0 01-6 0V4a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+      <p>Kongre & Konferans</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <p>Kurumsal Toplantı</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <p>Bayi Toplantısı</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <p>Ürün Lansmanı</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <p>Yönetim Zirvesi</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <p>Basın Açıklaması</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+      <p>Motivasyon Etkinliği</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+      <p>Gala Gecesi</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 8v13"/><path d="M9 11l-3 3"/><path d="M15 11l3 3"/></svg></div>
+      <p>Team Building</p>
+    </div>
+    <div class="use-item">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <p>Eğitim & Seminer</p>
+    </div>
   </div>
 </div>
 
@@ -408,7 +486,7 @@ footer a{color:var(--cyan);text-decoration:none;}
   </div>
   <div class="location-grid">
     <div class="loc-card">
-      <div class="loc-icon">✈️</div>
+      <div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
       <div class="loc-info">
         <h4>Milas-Bodrum Havalimanı</h4>
         <div class="dist">25 km</div>
@@ -416,7 +494,7 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
     </div>
     <div class="loc-card">
-      <div class="loc-icon">🏙️</div>
+      <div class="loc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9h6v12"/><path d="M3 9h18"/></svg></div>
       <div class="loc-info">
         <h4>Bodrum Şehir Merkezi</h4>
         <div class="dist">10 dk</div>
@@ -424,7 +502,7 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
     </div>
     <div class="loc-card">
-      <div class="loc-icon">⛵</div>
+      <div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M3 17l1-7h16l1 7H3z"/><path d="M5 17v2h2v-2M17 17v2h2v-2"/><path d="M12 10V3"/><path d="M8 6l4-3 4 3"/></svg></div>
       <div class="loc-info">
         <h4>Yalıkavak Marina</h4>
         <div class="dist">20 km</div>
@@ -432,33 +510,59 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
     </div>
     <div class="loc-card">
-      <div class="loc-icon">🚌</div>
+      <div class="loc-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
       <div class="loc-info">
         <h4>VIP Transfer Hizmeti</h4>
-        <div class="dist" style="font-size:14px;margin-top:4px;">İsteğe Bağlı</div>
+        <div class="dist" style="font-size:15px;margin-top:4px;">İsteğe Bağlı</div>
         <div class="time">Özel karşılamalı araç</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- WHY BLUE DREAMS -->
-<section style="background:#0d1e2c;">
-  <div class="section-title"><h2>Hizmetlerimiz & <span>Olanaklar</span></h2></div>
+<!-- HİZMETLER & OLANAKLAR -->
+<section style="background:var(--white);">
+  <div class="section-title">
+    <h2>Hizmetlerimiz & <span>Olanaklar</span></h2>
+  </div>
   <div class="features">
-    <div class="feature"><div class="icon">🎯</div><h4>A'dan Z'ye Koordinasyon</h4><p>Etkinlik koordinatörümüz her adımda yanınızda</p></div>
-    <div class="feature"><div class="icon">🍽️</div><h4>Gala & Catering</h4><p>550 kişilik açık büfe, A'la Carte & özel menü</p></div>
-    <div class="feature"><div class="icon">🌊</div><h4>Torba Koyu</h4><p>52.000 m², özel plaj & marina, Bodrum'a 10 dk</p></div>
-    <div class="feature"><div class="icon">🎤</div><h4>Teknik Altyapı</h4><p>Ses, ışık, projeksiyon, sahne, mikrofon, WiFi</p></div>
-    <div class="feature"><div class="icon">🏨</div><h4>336 Oda Kapasite</h4><p>Konaklamalı veya günübirlik organizasyon paketi</p></div>
-    <div class="feature"><div class="icon">🏊</div><h4>SPA & Aktiviteler</h4><p>Naya Spa, havuzlar, aqua park, su sporları</p></div>
-    <div class="feature"><div class="icon">🔒</div><h4>Güvenli Turizm</h4><p>Sertifikalı tesis, gıda güvenliği & hijyen protokolleri</p></div>
-    <div class="feature"><div class="icon">🎪</div><h4>Antik Tiyatro & Sahne</h4><p>Açık hava etkinlikleri için eşsiz atmosfer</p></div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <h4>A'dan Z'ye Koordinasyon</h4><p>Etkinlik koordinatörümüz her adımda yanınızda</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+      <h4>Gala & Catering</h4><p>550 kişilik açık büfe, A'la Carte & özel menü</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 17l3-3 3 3 3-3 3 3 3-3 3 3"/><path d="M2 12l3-3 3 3 3-3 3 3 3-3 3 3"/></svg></div>
+      <h4>Torba Koyu</h4><p>52.000 m², özel plaj & marina, Bodrum'a 10 dk</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 013 3v4a3 3 0 01-6 0V4a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+      <h4>Teknik Altyapı</h4><p>Ses, ışık, projeksiyon, sahne, mikrofon, WiFi</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h4>336 Oda Kapasite</h4><p>Konaklamalı veya günübirlik organizasyon paketi</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h4>SPA & Aktiviteler</h4><p>Naya Spa, havuzlar, aqua park, su sporları</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <h4>Güvenli Turizm</h4><p>Sertifikalı tesis, gıda güvenliği & hijyen protokolleri</p>
+    </div>
+    <div class="feature">
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h4>Antik Tiyatro & Sahne</h4><p>Açık hava etkinlikleri için eşsiz atmosfer</p>
+    </div>
   </div>
 </section>
 
 <!-- GALLERY CAROUSEL -->
-<div class="gallery-section" style="background:#0d1e2c;">
+<div class="gallery-section">
   <div class="section-title" style="padding:0 56px 36px;">
     <h2>Salon <span>Galerisi</span></h2>
   </div>
@@ -485,8 +589,14 @@ footer a{color:var(--cyan);text-decoration:none;}
   <h2>Etkinliğinizi Hayalinizdeki Gibi Planlayın</h2>
   <p>Toplantınız, konferansınız veya özel etkinliğiniz için teklif alın. Ekibimiz 24 saat içinde sizinle iletişime geçer.</p>
   <div class="cta-btns">
-    <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary">🌐 Web Sitesinde Rezervasyon</a>
-    <button class="btn-outline" onclick="downloadPDF()">📄 Tanıtım Kiti İndir</button>
+    <a href="https://bluedreamsresort.com/tr/meetings" target="_blank" class="btn-primary" style="display:flex;align-items:center;gap:7px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      Web Sitesinde Rezervasyon
+    </a>
+    <button class="btn-outline" onclick="downloadPDF()" style="display:flex;align-items:center;gap:7px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      Tanıtım Kiti İndir
+    </button>
   </div>
 </div>
 
@@ -516,16 +626,18 @@ footer a{color:var(--cyan);text-decoration:none;}
         <input type="text" placeholder="Tahmini Katılımcı Sayısı">
         <input type="date">
         <div class="form-full"><textarea placeholder="Etkinliğiniz hakkında bilgi verin..."></textarea></div>
-        <button type="submit" class="btn-primary form-full" style="border:none;padding:15px;">Teklif İsteyin →</button>
+        <button type="submit" class="btn-primary form-full" style="border:none;padding:14px;justify-content:center;">Teklif İsteyin →</button>
       </div>
     </form>
   </div>
 </section>
 
 <footer>
-  <div class="logo-text">Blue Dreams Resort & Spa Bodrum</div>
+  <div class="footer-logo">
+    <img src="data:image/png;base64,__LOGO__" alt="Blue Dreams Resort & Spa Bodrum">
+  </div>
   <p>Torba Mah. Heredot Bulvarı No:11 Bodrum, Muğla &nbsp;|&nbsp; <a href="tel:+902523371111">+90 252 337 11 11</a> &nbsp;|&nbsp; <a href="mailto:sales@bluedreamsresort.com">sales@bluedreamsresort.com</a></p>
-  <p style="margin-top:8px;"><a href="https://bluedreamsresort.com/tr/meetings" target="_blank">bluedreamsresort.com</a> &nbsp;|&nbsp; @bluedreamsresort</p>
+  <p style="margin-top:8px;"><a href="https://bluedreamsresort.com/tr/meetings" target="_blank">bluedreamsresort.com</a></p>
 </footer>
 
 <script>
@@ -538,7 +650,7 @@ function downloadPDF(){
   setTimeout(function(){URL.revokeObjectURL(a.href);document.body.removeChild(a);},3000);
   }catch(e){alert('PDF hazırlanıyor...');}}
 function submitForm(e){e.preventDefault();var btn=e.target.querySelector('[type=submit]');
-  btn.textContent='✅ Talebiniz Alındı!';btn.style.background='linear-gradient(135deg,#1a8a4a,#2dd36f)';
+  btn.textContent='Talebiniz Alındı!';btn.style.background='#1a8a4a';
   setTimeout(function(){btn.textContent='Teklif İsteyin →';btn.style.background='';},4000);}
 var carousels={};
 function initCarousel(id,trackId,dotsId,count,autoMs){
@@ -551,7 +663,7 @@ function goTo(id,idx){var s=carousels[id];if(!s)return;
   s.idx=(idx+s.count)%s.count;s.track.style.transform='translateX(-'+s.idx*100+'%)';
   s.dots.forEach(function(d,i){d.className=i===s.idx?'active':'';});}
 function moveCarousel(id,dir){var s=carousels[id];if(!s)return;goTo(id,s.idx+dir);}
-window.onload=function(){initCarousel('top','topTrack','topDots',4,4500);initCarousel('bot','botTrack','botDots',9,3000);};
+window.onload=function(){initCarousel('top','topTrack','topDots',5,4500);initCarousel('bot','botTrack','botDots',9,3000);};
 </script>
 </body>
 </html>

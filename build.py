@@ -74,6 +74,11 @@ def encode_image(path: Path) -> str:
     return base64.b64encode(buf.getvalue()).decode()
 
 
+def encode_png(path: Path) -> str:
+    """PNG'yi base64'e çevir (şeffaflığı koru)."""
+    return base64.b64encode(path.read_bytes()).decode()
+
+
 def encode_pdf(path: Path) -> str:
     """PDF'yi base64'e çevir."""
     return base64.b64encode(path.read_bytes()).decode()
@@ -99,6 +104,15 @@ def main():
             continue
         print(f"🖼️   İşleniyor: {filename}")
         replacements[f"__{key.upper()}__"] = encode_image(img_path)
+
+    # Logo işle (PNG, şeffaflık korunur)
+    logo_path = IMAGES_DIR / "logo_color.png"
+    if logo_path.exists():
+        print(f"🖼️   İşleniyor: logo_color.png")
+        replacements["__LOGO__"] = encode_png(logo_path)
+    else:
+        print(f"⚠️   Logo bulunamadı: {logo_path}")
+        replacements["__LOGO__"] = ""
 
     # PDF işle
     if PDF_PATH.exists():
